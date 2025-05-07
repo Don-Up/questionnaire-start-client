@@ -4,6 +4,7 @@ import Radio from "@/components/QuestionnaireComponent/Radio";
 import Title from "@/components/QuestionnaireComponent/Title";
 import Paragraph from "@/components/QuestionnaireComponent/Paragraph";
 import Info from "@/components/QuestionnaireComponent/Info";
+import Textarea from "@/components/QuestionnaireComponent/Textarea";
 
 type ComponentInfoType = {
     uuid: string;
@@ -35,6 +36,10 @@ export const getComponent = (comp: ComponentInfoType) => {
 
     if(type === "info"){
         return <Info {...props}/>
+    }
+
+    if(type === "textarea"){
+        return <Textarea uuid={uuid} props={props}/>
     }
 
     return null
